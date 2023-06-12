@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar Itens</title>
+</head>
+<body>
+    <h1>Listar Itens</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.nome }}</td>
+            <td>{{ item.descricao }}</td>
+            <td>
+                <a href="/editar/{{ item.id }}">Editar</a>
+                <a href="/excluir/{{ item.id }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/adicionar">Adicionar Item</a>
+</body>
+</html>
